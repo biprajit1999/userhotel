@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<div id="navbar"></div>
+	<script>
+		fetch('navbar.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('navbar').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the navbar:', error);
+		});
+
+	</script>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<style>
+        body {
+            background-color: rgb(237, 236, 239);
+            background-image: url('https://source.unsplash.com/1920x1080/?hotel');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+        p, h1, a
+        {
+            color: aliceblue;
+        }
+        
+    </style>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form1" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/',
+					data: $('#form1').serialize(),
+					dataType: "json",
+					success: function(response){
+						$('#form1')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="You are regestered,You can login now.") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<h1 style="color: aliceblue;">Welcome To Paradise Cove Retreat</h1>
+
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Register Now
+			</p>
+		</div>
+		<div class="form-group">
+			<form id="form1" method="post">
+				<input type="email" name="email" placeholder="E-mail" required="" class="form-control"><br/>
+				<input type="text" name="username" placeholder="Username" required="" class="form-control"><br/>
+				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br/>
+				<input type="password" name="passwordConf" placeholder="Confirm Password" required="" class="form-control"><br/>
+				<input type="submit" value="Register" class="btn btn-success">
+			</form>
+		</div>
+		
+		<div class="mssg bg-danger">
+			<span id="check"></span>
+		</div>
+		<div>
+			<span>Already Registered! <a href="/login">Login</a></span>
+		</div>
+
+		<div id="LangTable"><a href="/login" id="aa"></a>
+		</div>
+	</div>
+</body>
+<div id="footer" style="position: fixed; left: 0; bottom: 0; width: 100%;"></div>
+	<script>
+		fetch('footer.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('footer').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the footer:', error);
+		});
+	</script>
+</html>

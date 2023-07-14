@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="navbar"></div>
+	<script>
+		fetch('navbar.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('navbar').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the navbar:', error);
+		});
+
+	</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./css/profile.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="slider-header">
+        <div class="slider-container">
+          <div class="slider-item active">
+            <img src="https://b1400085.smushcdn.com/1400085/wp-content/uploads/2017/03/PicMonkey-Collage-2-1500x515.jpg?lossy=1&strip=1&webp=1" alt="Slider Image 1">
+            <div class="slider-content" style="color: rgb(244, 244, 247);">
+              <h1>Paradise Cove Retreat</h1>
+              <p>Welcome to our exquisite hotel, where luxury meets comfort. Experience impeccable service, breathtaking views, and indulge in a memorable stay filled with relaxation and bliss. Your perfect retreat awaits</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <img src="data:image/jpeg;base64,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" alt="Slider Image 2">
+            <div class="slider-content" style="color: #120312;">
+              <h1>Junior Suite</h1>
+              <p>Step into our Junior Suite and immerse yourself in elegance and sophistication. With spacious interiors, modern amenities, and stunning views, it's the perfect haven for discerning guests seeking a refined and luxurious escape.</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <img src="https://img2.chinadaily.com.cn/images/201811/20/5bf3d584a310eff369073ea9.jpeg" alt="Slider Image 3">
+            <div class="slider-content" style="color: #f6f2f7;">
+              <h2>Presidential Suite</h2>
+              <p>Our Presidential Suite is a sanctuary of luxury and opulence, reserved for our esteemed VIP and exclusive guests. Experience unparalleled grandeur, impeccable service, and breathtaking panoramic views, ensuring an unforgettable stay befitting royalty.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider-links">
+          <span class="slider-link active" onclick="showSlide(0)"></span>
+          <span class="slider-link" onclick="showSlide(1)"></span>
+          <span class="slider-link" onclick="showSlide(2)"></span>
+        </div>
+      </header>
+
+      
+
+
+
+    <div id="content-container mt-4" style="margin-top: 20px; overflow:auto;">
+
+        
+        <div class="container-fluid custom-container mt-4" id="c1">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8" style="margin-left: 250px;">
+                    <div class="card p-3 py-4" style="background-color: #eceaea;"><br><br>
+                        <div class="text-center">
+                            <img src="https://i.scdn.co/image/ab6761610000e5eb4e01a0cfae63242c4f07bfa7" width="100" height="120px" class="rounded-circle">
+                        </div>
+                        <div class="text-center mt-3">
+                            <span class="bg-secondary p-1 px-4 rounded text-white"><%= name %></span><br>
+                            <h5 class="mt-2 mb-0"><%= email %></h5><br>
+                            <div class="px-4 mt-1">
+                                <p class="fonts">
+                                    We are delighted to have you as our guest and we hope your stay with us will be truly memorable. Nestled in the picturesque surroundings,
+                                     our hotel offers a tranquil oasis where you can relax and rejuvenate.
+
+                                    Our dedicated staff is committed to providing exceptional service and ensuring your comfort throughout your stay. 
+                                    Whether you're here for a leisurely vacation or a business trip,
+                                    and world-class amenities are designed to cater to your every need.
+
+                                    Thank you for choosing Paradise Cove Retreat. We look forward to creating a
+                                    delightful and unforgettable experience for you. Enjoy your stay!
+                                </p>
+                            </div><br>
+                            <div class="buttons">
+                                <button class="btn btn-outline-primary px-4">Message</button>
+                                <button class="btn btn-primary px-4 ms-3">Contact</button><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid custom-container mt-4 d-flex justify-content-center" style="overflow: scroll;">
+            <div class="row">
+                <div class="col-md-8 main" style="margin-left: 1px;">
+                    <form id="registrationForm" action="/check_room_availability" method="post">
+                        <h1>Welcome to Paradise Cove Retreat</h1>
+                        <p style="text-align: center;">Book Your Room</p>
+                        <br>
+
+                        <b>Choose your Room</b>
+                        <select class="box" id="room" name="room" required>
+                            <option disabled selected>---Rooms---</option>
+                            <option value="Single Room">Single Room</option>
+                            <option value="Triple Room">Triple Room</option>
+                            <option value="Deluxe Room">Deluxe Room</option>
+                            <option value="Junior Suite">Junior Suite</option>
+                            <option value="Presidential Suite">Presidential Suite</option>
+                        </select>
+
+                        <br>
+                        <br>
+                        <label for="checkIn">Check-in</label>
+                        <input type="datetime-local" class="form-control" id="checkIn" name="checkIn" required min="2023-01-01T10:00" max="2023-12-31T22:00">
+                        <br>
+                        <label for="checkOut">Check-out</label>
+                        <input type="datetime-local" class="form-control" id="checkOut" name="checkOut" required min="2023-01-01T10:00" max="2023-12-31T22:00">
+
+                        <br>
+
+                       <center> <button class="btn btn-register" type="submit">Check Availability</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+  
+<script>
+const sliderContainer = document.querySelector('.slider-container');
+const sliderItems = document.querySelectorAll('.slider-item');
+const sliderLinks = document.querySelectorAll('.slider-link');
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  sliderItems.forEach((item, i) => {
+    item.classList.remove('active', 'previous', 'next');
+
+    if (i === index) {
+      item.classList.add('active');
+      sliderLinks[i].classList.add('active');
+    } else if (i === index - 1 || (index === 0 && i === sliderItems.length - 1)) {
+      item.classList.add('previous');
+      sliderLinks[i].classList.remove('active');
+    } else if (i === index + 1 || (index === sliderItems.length - 1 && i === 0)) {
+      item.classList.add('next');
+      sliderLinks[i].classList.remove('active');
+    }
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % sliderItems.length;
+  showSlide(currentIndex);
+}
+
+function previousSlide() {
+  currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+  showSlide(currentIndex);
+}
+
+sliderLinks.forEach((link, index) => {
+  link.addEventListener('click', () => {
+    showSlide(index);
+  });
+});
+
+setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+
+</script>
+<div id="footer" style="position: fixed; left: 0; bottom: 0; width: 100%;"></div>
+	<script>
+		fetch('footer.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('footer').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the footer:', error);
+		});
+	</script>
+</html>
+

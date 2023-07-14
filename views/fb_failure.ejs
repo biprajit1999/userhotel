@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<div id="navbar"></div>
+	<script>
+		fetch('navbar.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('navbar').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the navbar:', error);
+		});
+
+	</script>
+<head>
+	<title> Hotel Form</title>
+<link rel="stylesheet"
+href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity=
+"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<style>
+	body {
+		background-color: rgb(237, 236, 239);
+		background-image: url('https://source.unsplash.com/1920x1080/?hotel');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: relative;
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+	p, h1, a
+	{
+		color: rgb(14, 15, 15);
+	}
+	
+</style>
+		
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+	<body>
+	<br>
+	<br>
+	<br>
+	<div class="container" >
+		<div class="row">
+		<div class="col-md-3">
+		</div>
+				
+		<div class="col-md-6 main">
+					
+			<h1> You Have Already Given Your Feedback</h1>
+			<p>Please do visit us again</p><br><br>
+			<a id="visual" href="/profile">Profile</a><br>
+					
+		</div>
+				
+				
+		<div class="col-md-3">
+		</div>
+				
+		</div>
+	</div>
+</body>
+<div id="footer" style="position: fixed; left: 0; bottom: 0; width: 100%;"></div>
+	<script>
+		fetch('footer.html')
+		.then(response => response.text())
+		.then(html => {
+			document.getElementById('footer').innerHTML = html;
+		})
+		.catch(error => {
+			console.error('Error fetching the footer:', error);
+		});
+	</script>
+</html>
