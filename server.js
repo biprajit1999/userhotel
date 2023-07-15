@@ -1,5 +1,5 @@
 let express = require('express');
-let env = require('dotenv').config()
+let env = require('dotenv').config();
 let ejs = require('ejs');
 let path = require('path');
 let app = express();
@@ -49,7 +49,7 @@ app.use('/', index);
 
 
 
-app.post('/survey_form', function(req, res) {
+app.post('/submit_form', function(req, res) {
   let name = req.body.name;
   let phone = req.body.phone;
   let aadhar = req.body.aadhar;
@@ -242,55 +242,6 @@ app.post('/check_room_availability', function(req, res) {
       }
   });
 });
-
-
-app.delete('/survey_form/delete/:aadhar', function(req, res) {
-  let aadhar = req.params.aadhar;
-
-  db.collection('detail').deleteOne({ aadhar: aadhar }, function(err, result) {
-    if (err) {
-      console.log(err);
-      return res.status(500).send("Error deleting the record!");
-    }
-
-    if (result.deletedCount > 0) {
-      console.log("Record deleted successfully");
-      return res.send("Record deleted successfully!");
-    } else {
-      console.log("Record not found");
-      return res.status(404).send("Record not found!");
-    }
-  });
-});
-
-
-
-const Detail = require('./models/detail');
-
-
-app.put("/survey_form/update", (req, res) => {
-  let query = { aadhar: req.body.aadhar };
-  Detail.findOneAndUpdate(query, req.body, { new: true })
-    .then(() => {
-      res.send("Record updated successfully!");
-    })
-    .catch(() => {
-      res.status(400).send("Error updating the record!");
-    });
-});
-
-
-app.get("/survey_form/retrieve", (req, res) => {
-  let query = { aadhar: req.query.aadhar };
-  Detail.findOne(query)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch(() => {
-      res.send(null);
-    });
-});
-
 
 
 
